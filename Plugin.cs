@@ -3,7 +3,7 @@ using BepInEx.Configuration;
 
 namespace BetterHitReaction
 {
-    [BepInPlugin("com.takenmake.betterhitreaction", "Better Hit Reaction", "1.0.1")]
+    [BepInPlugin("com.takenmake.betterhitreaction", "Better Hit Reaction", "1.1.0")]
     public class Plugin : BaseUnityPlugin
     {
         private static ConfigEntry<float> factor;
@@ -11,7 +11,7 @@ namespace BetterHitReaction
         private void Awake()
         {
             // Plugin startup logic
-            factor = Config.Bind("General", "factor", 0.5f, new ConfigDescription("The factor to multiply the effect's strength by.", new AcceptableValueRange<float>(0f, 1000f)));
+            factor = Config.Bind("General", "Factor", 0.5f, new ConfigDescription("The factor to multiply the effect's strength by.", new AcceptableValueRange<float>(0f, 1000f)));
 
             new HitStaminaPatch().Enable();
 
